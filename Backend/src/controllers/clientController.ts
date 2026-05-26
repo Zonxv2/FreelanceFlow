@@ -60,7 +60,7 @@ export const deleteClient = async (
       });
     }
 
-    if (client.owner.toString() !== req.user.id) {
+    if (client.user.toString() !== req.user.id) {
       return res.status(401).json({
         message: "Unauthorized",
       });
@@ -93,7 +93,7 @@ export const updateClient = async (
       });
     }
 
-    if (client.owner.toString() !== req.user.id) {
+    if (client.user.toString() !== req.user.id) {
       return res.status(401).json({
         message: "Unauthorized",
       });
