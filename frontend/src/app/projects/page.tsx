@@ -47,8 +47,6 @@ export default function ProjectsPage() {
     setTimeout(() => setMessage(""), 3000);
   };
 
-  // FIX: token leído directo de localStorage, sin guardarlo en state.
-  // useEffect con [] vacío → se ejecuta una sola vez, sin race condition.
   useEffect(() => {
     const token = localStorage.getItem("token");
 

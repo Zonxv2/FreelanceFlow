@@ -9,7 +9,9 @@ export const getProjects = async (
 
   try {
 
-    const projects = await Project.find().populate("client");
+    const projects = await Project.find({
+      user: req.user.id,
+    }).populate("client");
 
     res.json(projects);
 
@@ -42,7 +44,7 @@ export const createProject = async (
       status,
       budget,
       client,
-      owner: req.user.id,
+      user: req.user.id,
     });
 
     res.status(201).json(project);
@@ -80,7 +82,7 @@ export const updateProject = async (
 };
 
 export const deleteProject = async (
-  req: Request,
+  req: AuthRequest,
   res: Response
 ) => {
 

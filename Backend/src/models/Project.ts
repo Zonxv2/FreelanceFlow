@@ -11,6 +11,12 @@ const projectSchema = new mongoose.Schema(
       type: String,
     },
 
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+
     status: {
       type: String,
       default: "Pending",

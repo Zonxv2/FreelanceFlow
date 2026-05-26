@@ -15,7 +15,7 @@ export const createClient = async (
       email,
       phone,
       company,
-      owner: req.user.id,
+      user: req.user.id,
     });
 
     res.status(201).json(client);
@@ -34,7 +34,7 @@ export const getClients = async (
 ) => {
   try {
     const clients = await Client.find({
-      owner: req.user.id,
+      user: req.user.id,
     });
 
     res.status(200).json(clients);
