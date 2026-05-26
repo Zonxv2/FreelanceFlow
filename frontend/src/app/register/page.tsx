@@ -19,6 +19,7 @@ export default function RegisterPage() {
     setLoading(true);
 
     try {
+      console.log("REGISTER V2");
       await api.post(
       "/auth/register",
       { name, email, password }

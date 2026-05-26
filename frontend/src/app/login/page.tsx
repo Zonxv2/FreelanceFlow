@@ -17,6 +17,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
+      console.log("LOGIN V2");
       const response = await api.post(
         "/auth/login",
         { email, password }
